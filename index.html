@@ -3,24 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Code Quiz</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="startQuiz">
+    <div class="jumbotron">
+        Code Quiz
+        <div id="previoususer"></div>
+    </div>
+    <div id="container">
         <button id="startbtn">Start Quiz</button>
+        <div id="game">
+            <div id="gameContainer">
+                <p id="question"></p>
+                <p id="result"></p>
+            <div id="options">
+                <button id="option1" onclick="checkAnswer(this)" data-value="0"></button>
+                <button id="option2" onclick="checkAnswer(this)" data-value="1"></button>
+                <button id="option3" onclick="checkAnswer(this)" data-value="2"></button>
+            </div>
+        </div>
+            <div id="timer">
+                <div id="counter"></div>
+                <div id="btimeGauge"></div>
+                <div id="timeGauge"></div>
+            </div>
+            <div id="progress"></div>
+            <div id="userResults">
+                <input id="user" type ="text" />
+                <button  onclick="saveuser()">Save User</button>
+            </div>
+        </div>
+        <div id="resultsContainer"></div>
     </div>
-    <div id="gameContainer">
-        <div id="question">
-            <div id="options"></div>
-                <button id="option1"  data-value="0"></button>
-                <button id="option2" data-value="1"></button>
-                <button id="option3"  data-value="2"></button>
-    </div>
-    <div id="timer">
-        <div id="counter"></div>
-    </div>
-    <div id="resultsContainer"></div>
-
     <script src="script.js"></script>
 </body>
 </html>
