@@ -5,34 +5,34 @@ Homework 4 - Code Quiz
 ## Installation
 
 Create 3 seperate files:
-    - index.html
-    - script.js
-    - style.css
+- index.html
+- script.js
+- style.css
 
-index.html
-    - Create different <div> containers for the Code Quiz
-    - Inside the "gameContainer" <div>, isert these <p> tags:
-        + question
-        + result
-    - Inside the "options" <div>, insert the differnt answer options
-    - The "timer" <div> contains everything for our counter
-    - The "userResults" <div> contains everything for saving our score at the end of the game
-    - Be sure to link both your "script.js" and "style.css" files
+### index.html
+- Create different <div> containers for the Code Quiz
+- Inside the "gameContainer" <div>, isert these <p> tags:
+  + question
+  + result
+- Inside the "options" <div>, insert the differnt answer options
+- The "timer" <div> contains everything for our counter
+- The "userResults" <div> contains everything for saving our score at the end of the game
+- Be sure to link both your "script.js" and "style.css" files
 
-script.js
-    - Create your differnt DOM Elements that you will be using for your game
-    - Set up your Local Stroage
-    - Create an array including both your questions and different answer options
-    - Create additional variable for your timer
-    - Create a series of differnt functions:
-        + "renderQuestion()" - Renders the questions
-        + "renderCounter()" - Renders the counter
-        + "checkAnswer()" - Chcks the answwer
-        + "scoreRender()" - Renders the users score
-        + "saveUser()" - Saves user to Local Storage
+### script.js
+- Create your differnt DOM Elements that you will be using for your game
+- Set up your Local Stroage
+- Create an array including both your questions and different answer options
+- Create additional variable for your timer
+- Create a series of differnt functions:
+  + "renderQuestion()" - Renders the questions
+  + "renderCounter()" - Renders the counter
+  + "checkAnswer()" - Chcks the answwer
+  + "scoreRender()" - Renders the users score
+  + "saveUser()" - Saves user to Local Storage
 
-style.css
-    - Formats different aspects of the web page
+### style.css
+- Formats different aspects of the web page
 
 
 ## Usage
