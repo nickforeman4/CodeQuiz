@@ -1,17 +1,18 @@
 body{
     font-size: 20px;
-    font-family: monospace;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 #container{
     margin : 20px auto;
-    background-color: white;
+    background-color: black;
     height: 300px;
     width : 700px;
     border-radius: 5px;
     box-shadow: 0px 5px 15px 0px;
     position: relative;
 }
+
 #startBtn{
     font-size: 1.5em;
     font-weight: bolder;
@@ -26,22 +27,10 @@ body{
     top:50px;
     color : lightgrey;
 }
-#startBtn:hover{
-    border: 3px solid lightseagreen;
-    color : lightseagreen;
-}
 
-#qImg{
-    width : 200px;
-    height : 200px;
-    position: absolute;
-    left : 0px;
-    top : 0px;
-}
-#qImg img{
-    width : 200px;
-    height : 200px;
-    border-top-left-radius: 5px;
+#startBtn:hover{
+    border: 3px solid red;
+    color : red;
 }
 
 #question{
@@ -51,10 +40,12 @@ body{
     right:0;
     top:0;
 }
+
 #question p{
     margin : 0;
     padding : 15px;
     font-size: 1.25em;
+    color: white;
 }
 
 #options{
@@ -64,6 +55,7 @@ body{
     top : 125px;
     padding : 10px
 }
+
 .options{
     display: inline-block;
     width : 135px;
@@ -73,6 +65,7 @@ body{
     cursor: pointer;
     padding : 5px;
 }
+
 .options:hover{
     border : 2px solid grey;
     font-weight: bold;
@@ -85,9 +78,12 @@ body{
     bottom : 0px;
     text-align: center;
 }
+
 #counter{
     font-size: 3em;
+    color: white;
 }
+
 #btimeGauge{
     width : 150px;
     height : 10px;
@@ -95,30 +91,15 @@ body{
     background-color: lightgray;
     margin-left : 25px;
 }
+
 #timeGauge{
     height : 10px;
     border-radius: 10px;
-    background-color: mediumseagreen;
+    background-color: red;
     margin-top : -10px;
     margin-left : 25px;
 }
-#progress{
-    width : 500px;
-    position: absolute;
-    bottom : 0px;
-    right : 0px;
-    padding:5px;
-    text-align: right;
-}
-.prog{
-    width : 25px;
-    height : 25px;
-    border: 1px solid #000;
-    display: inline-block;
-    border-radius: 50%;
-    margin-left : 5px;
-    margin-right : 5px;
-}
+
 #resultsContainer{
     margin : 20px auto;
     background-color: white;
@@ -130,11 +111,13 @@ body{
     position: relative;
     display: none;
 }
+
 #resultsContainer img{
     position: absolute;
     top:100px;
     left:325px;
 }
+
 #resultsContainer p{
     position: absolute;
     display: block;

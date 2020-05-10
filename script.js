@@ -1,4 +1,4 @@
-///Pointers to DOM Elements
+///DOM Elements
 var startbtn = document.getElementById("startbtn");
 var game = document.getElementById("gameContainer");
 var question = document.getElementById("question");
@@ -18,19 +18,19 @@ userResults.style.display = "none";
 
 // Local Storage
 var userInitial = localStorage.getItem("userId") || "Welcome User";
-var maxscore = localStorage.getItem("maxscore") || 0;
+var maxScore = localStorage.getItem("maxScore") || 0;
 displaylocalstorage();
 function displaylocalstorage(){
     var userInitial = localStorage.getItem("userId") || "Welcome User";
-var maxscore = localStorage.getItem("maxscore") || 0;
+var maxScore = localStorage.getItem("maxScore") || 0;
 previoususer.innerHTML = `
 <h3>User with Max Score</h3>
 <p>User : ${userInitial}</p>
-<p>Max Score: ${maxscore}</p>
+<p>Max Score: ${maxScore}</p>
 `
 }
 
-// same for question and options
+// Questions and Options
 var quizArray = [
     {
         question: "What does CSS mean?",
@@ -53,7 +53,7 @@ var quizArray = [
     }
 ];
 
-// create some variables
+// Additional Variables
 
 const lastQuestion = quizArray.length-1 ;
 let runningQuestion = 0;
@@ -65,7 +65,7 @@ let TIMER;
 let score = 0;
 let losses = 0;
 
-// render a question
+// Renders Question
 function renderQuestion(){
     let q = quizArray[runningQuestion];
     
@@ -77,30 +77,19 @@ function renderQuestion(){
 
 startbtn.addEventListener("click",startQuiz);
 
-// start quiz
+// Starts Quiz
 function startQuiz(){
     startbtn.style.display = "none";
-  
     game.style.display = "block";
     renderQuestion();
-    //renderProgress();
-    //renderCounter();
     TIMER = setInterval(renderCounter,1000); // 1000ms = 1s
 }
 
-// render progress
-function renderProgress(){
-    for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
-        progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
-    }
-}
-
-// counter render
-
+// Renders Counter
 function renderCounter(){
     counter.innerHTML = count;
-     console.log(count)
-     if(count > 0){
+    console.log(count)
+    if(count > 0){
         count--
         
     }else{
@@ -108,78 +97,56 @@ function renderCounter(){
         counter.innerHTML = "Time Up!";
         clearInterval(TIMER);
         scoreRender();
-        // change progress color to red
-      
     }
 }
 
-// checkAnwer
-
+// Checks Answer
 function checkAnswer(event){
     var answer = event.getAttribute("data-value");
     console.log("On click",answer,"The user clicked this");
     console.log(`On Click ${answer} The user clicked this`)
     if( answer == quizArray[runningQuestion].answer){
-        // answer is correct
+        // If answer is correct
         score++;
-        count += 5;
-        result.innerHTML = `<p class="bg-success">You got it! You gained 5 secs </p>`
-        // change progress color to green
-        //answerIsCorrect();
+        result.innerHTML = `<p class="bg-success"> You are correct! </p>`
     }else{
+        // If answer is incorrect
         losses++;
         count -= 10;
-        result.innerHTML = `<p class="bg-danger"> Wrong! TYou lost 10 secs </p>`
-        // answer is wrong
-        // change progress color to red
-        //answerIsWrong();
-    }
+        result.innerHTML = `<p class="bg-danger"> Wrong! You just lost 10 seconds. </p>`
+        }
     
     if(runningQuestion < lastQuestion){
         runningQuestion++;
         renderQuestion();
     }else{
-        // end the quiz and show the score
-        
+        //Ends the quiz and show score
         clearInterval(TIMER);
         scoreRender();
     }
 }
 
-// answer is correct
-//function answerIsCorrect(){
-//    document.getElementById(runningQuestion).style.backgroundColor = "#0f0";
-//}
-
-//// answer is Wrong
-//function answerIsWrong(){
-//    document.getElementById(runningQuestion).style.backgroundColor = "#f00";
-//}
-
-// score render
+// Renders Score
 function scoreRender(){
-    
-     game.style.display = "none";
-
+    game.style.display = "none";
     resultsContainer.style.display = "block";
     userResults.style.display = "block";
     
-    // calculate the amount of question percent answered by the user
+    // Calculates the user's score
     scorePerCent = Math.round(100 * score/quizArray.length);
     console.log("Score",scorePerCent)
-    
+
     resultsContainer.innerHTML += "<p>"+ scorePerCent +"%</p>";
-
-
+    
 }
 
-function saveuser(){
+function saveUser(){
     var user = document.getElementById("user").value;
-    
-    if ( parseInt(scorePerCent) > parseInt(maxscore)){
+
+    if ( parseInt(scorePerCent) > parseInt(maxScore)){
         console.log(scorePerCent,user)
         localStorage.setItem("userId",user)
-        localStorage.setItem("maxscore",scorePerCent)
+        localStorage.setItem("maxScore",scorePerCent)
         displaylocalstorage()
     }
 }
