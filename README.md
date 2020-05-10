@@ -10,13 +10,13 @@ Create 3 seperate files:
 - style.css
 
 ### index.html
-- Create different <div> containers for the Code Quiz
-- Inside the "gameContainer" <div>, isert these <p> tags:
+- Create different containers for the Code Quiz
+- Inside the "gameContainer", isert these "p" tags:
   + question
   + result
-- Inside the "options" <div>, insert the differnt answer options
-- The "timer" <div> contains everything for our counter
-- The "userResults" <div> contains everything for saving our score at the end of the game
+- Inside the "options" container, insert the differnt answer options
+- The "timer" container contains everything for our counter
+- The "userResults" container contains everything for saving our score at the end of the game
 - Be sure to link both your "script.js" and "style.css" files
 
 ### script.js
